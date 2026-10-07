@@ -2,18 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Student Management System - Download</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Download Student Management System desktop application for Windows and macOS.">
+          content="Student Management System - Online and Offline School Management Application">
+
+    <meta name="keywords"
+          content="Student Management System, School Management, Student Registration, Attendance, Fees">
+
+    <meta name="author"
+          content="Gopi">
+
+    <title>Student Management System | Gopi</title>
 
     <style>
-
-        /* ==============================
-           GLOBAL
-        ============================== */
 
         * {
             margin: 0;
@@ -23,106 +27,82 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #f5f7fb;
-            color: #1f2937;
+            background:
+                linear-gradient(135deg, #eef4ff, #ffffff, #eaf7ff);
+            min-height: 100vh;
+            color: #172033;
         }
 
-        a {
-            text-decoration: none;
-        }
-
-
-        /* ==============================
+        /* =========================================
            HEADER
-        ============================== */
+        ========================================= */
 
         header {
-            background: #ffffff;
+            width: 100%;
+            padding: 18px 6%;
+            background: rgba(255,255,255,0.95);
             border-bottom: 1px solid #e5e7eb;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar {
-            max-width: 1200px;
-            margin: auto;
-            padding: 18px 25px;
 
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .logo {
+        .brand {
             display: flex;
             align-items: center;
             gap: 12px;
-
-            font-size: 22px;
-            font-weight: bold;
-            color: #111827;
         }
 
-        .logo-icon {
-            width: 42px;
-            height: 42px;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
-            color: white;
-
-            border-radius: 10px;
-            font-size: 21px;
-            font-weight: bold;
+        .brand-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 1px solid #ddd;
         }
 
-        .nav-link {
-            color: #4b5563;
-            font-size: 15px;
-            font-weight: 600;
+        .brand-text h2 {
+            font-size: 20px;
+            color: #172033;
         }
 
-        .nav-link:hover {
-            color: #2563eb;
+        .brand-text p {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 2px;
         }
 
-
-        /* ==============================
+        /* =========================================
            HERO
-        ============================== */
+        ========================================= */
 
         .hero {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: auto;
-            padding: 80px 25px 50px;
-
+            padding: 70px 20px 40px;
             text-align: center;
         }
 
-        .badge {
+        .version {
             display: inline-block;
-
-            background: #e0e7ff;
-            color: #3730a3;
-
-            padding: 8px 15px;
+            background: #e8f0ff;
+            color: #2457d6;
+            padding: 7px 16px;
             border-radius: 30px;
-
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
-
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .hero h1 {
-            font-size: 52px;
+            font-size: clamp(36px, 6vw, 64px);
             line-height: 1.1;
             margin-bottom: 20px;
-
             color: #111827;
         }
 
@@ -131,454 +111,571 @@
         }
 
         .hero p {
-            max-width: 700px;
+            max-width: 720px;
             margin: auto;
-
-            font-size: 19px;
+            font-size: 18px;
             line-height: 1.7;
-
-            color: #6b7280;
+            color: #64748b;
         }
 
+        /* =========================================
+           TWO MAIN OPTIONS
+        ========================================= */
 
-        /* ==============================
-           DOWNLOAD BOX
-        ============================== */
+        .main-options {
+            max-width: 1050px;
+            margin: 35px auto 70px;
+            padding: 0 20px;
 
-        .download-container {
-            max-width: 1100px;
-            margin: 30px auto 70px;
-            padding: 0 25px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .option-card {
+            background: rgba(255,255,255,0.96);
+            border-radius: 25px;
+            padding: 42px 35px;
+
+            border: 1px solid #e5e7eb;
+
+            box-shadow:
+                0 20px 50px rgba(15,23,42,0.08);
+
+            text-align: center;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .option-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 30px 65px rgba(15,23,42,0.14);
+        }
+
+        .option-icon {
+            width: 85px;
+            height: 85px;
+
+            margin: 0 auto 22px;
+
+            border-radius: 22px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 42px;
+
+            background: #eff6ff;
+        }
+
+        .option-card h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            color: #111827;
+        }
+
+        .option-card p {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .option-list {
+            list-style: none;
+            text-align: left;
+            max-width: 310px;
+            margin: 0 auto 28px;
+        }
+
+        .option-list li {
+            margin: 12px 0;
+            color: #334155;
+            font-size: 15px;
+        }
+
+        .option-list li::before {
+            content: "✓";
+            color: #16a34a;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* =========================================
+           BUTTON
+        ========================================= */
+
+        .main-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 230px;
+
+            padding: 15px 25px;
+
+            border-radius: 12px;
+
+            text-decoration: none;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            transition: 0.2s ease;
+        }
+
+        .online-button {
+            background: #2563eb;
+            color: white;
+        }
+
+        .online-button:hover {
+            background: #1d4ed8;
+            transform: scale(1.03);
+        }
+
+        .offline-button {
+            background: #111827;
+            color: white;
+        }
+
+        .offline-button:hover {
+            background: #000000;
+            transform: scale(1.03);
+        }
+
+        /* =========================================
+           DOWNLOAD SECTION
+        ========================================= */
+
+        #download-section {
+            max-width: 1050px;
+            margin: 0 auto 70px;
+            padding: 0 20px;
         }
 
         .download-box {
             background: white;
-
             border: 1px solid #e5e7eb;
-            border-radius: 20px;
+            border-radius: 25px;
+            padding: 45px 35px;
 
-            padding: 40px;
+            box-shadow:
+                0 15px 45px rgba(15,23,42,0.07);
 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            text-align: center;
         }
 
-        .download-title {
-            text-align: center;
+        .download-box h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .download-box > p {
+            color: #64748b;
             margin-bottom: 35px;
         }
 
-        .download-title h2 {
-            font-size: 30px;
-            color: #111827;
-            margin-bottom: 10px;
-        }
-
-        .download-title p {
-            color: #6b7280;
-        }
-
-
-        /* ==============================
-           OS DETECTION
-        ============================== */
-
-        .detected-os {
-            display: none;
-
-            background: #eff6ff;
-            border: 1px solid #bfdbfe;
-
-            padding: 15px 20px;
-
-            border-radius: 12px;
-
-            margin-bottom: 30px;
-
-            text-align: center;
-
-            color: #1d4ed8;
-
-            font-weight: bold;
-        }
-
-
-        /* ==============================
-           PLATFORM GRID
-        ============================== */
-
-        .platform-grid {
+        .download-options {
             display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
         }
 
-        .platform {
-            border: 2px solid #e5e7eb;
-            border-radius: 16px;
-
+        .download-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 18px;
             padding: 30px 20px;
-
-            text-align: center;
-
-            transition: 0.3s;
+            background: #fafafa;
         }
 
-        .platform:hover {
-            transform: translateY(-5px);
-
-            border-color: #2563eb;
-
-            box-shadow:
-                0 10px 25px rgba(37,99,235,0.12);
+        .windows-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
         }
 
-        .platform.recommended {
-            border-color: #2563eb;
-
-            background: #f8fbff;
-        }
-
-        .platform-icon {
-            width: 65px;
-            height: 65px;
-
-            margin: 0 auto 18px;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            border-radius: 15px;
-
-            background: #eff6ff;
-
-            font-size: 30px;
-        }
-
-        .platform h3 {
-            font-size: 20px;
+        .download-card h3 {
+            font-size: 21px;
             margin-bottom: 8px;
         }
 
-        .platform p {
-            color: #6b7280;
+        .download-card p {
+            color: #64748b;
             font-size: 14px;
-
+            line-height: 1.5;
             margin-bottom: 20px;
         }
 
-
-        /* ==============================
-           DOWNLOAD BUTTON
-        ============================== */
-
-        .download-button {
+        .download-link {
             display: inline-block;
-
-            width: 100%;
-
-            padding: 13px 15px;
-
-            border-radius: 9px;
-
             background: #2563eb;
-
             color: white;
 
-            font-size: 15px;
+            padding: 12px 22px;
+
+            border-radius: 10px;
+
+            text-decoration: none;
 
             font-weight: bold;
-
-            transition: 0.2s;
         }
 
-        .download-button:hover {
+        .download-link:hover {
             background: #1d4ed8;
         }
 
-        .download-button.disabled {
-            background: #9ca3af;
-            cursor: not-allowed;
+        .coming-soon {
+            display: inline-block;
+            background: #e5e7eb;
+            color: #475569;
+
+            padding: 12px 22px;
+
+            border-radius: 10px;
+
+            font-weight: bold;
         }
 
-
-        /* ==============================
+        /* =========================================
            FEATURES
-        ============================== */
+        ========================================= */
 
-        .features-section {
-            max-width: 1100px;
+        .features {
+            max-width: 1050px;
             margin: 0 auto 70px;
-
-            padding: 0 25px;
+            padding: 0 20px;
+            text-align: center;
         }
 
-        .features-title {
-            text-align: center;
+        .features h2 {
+            font-size: 32px;
             margin-bottom: 30px;
         }
 
-        .features-title h2 {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-
-        .features-title p {
-            color: #6b7280;
-        }
-
-        .features {
+        .feature-grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(5, 1fr);
-
-            gap: 15px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
         }
 
         .feature {
             background: white;
-
             border: 1px solid #e5e7eb;
-
-            border-radius: 12px;
-
-            padding: 20px;
-
-            text-align: center;
+            border-radius: 16px;
+            padding: 25px 15px;
         }
 
         .feature-icon {
-            font-size: 28px;
-            margin-bottom: 10px;
+            font-size: 30px;
+            margin-bottom: 12px;
         }
 
         .feature h3 {
-            font-size: 15px;
+            font-size: 16px;
+            margin-bottom: 6px;
         }
 
-
-        /* ==============================
-           SYSTEM REQUIREMENTS
-        ============================== */
-
-        .requirements {
-            max-width: 800px;
-
-            margin: 0 auto 70px;
-
-            padding: 0 25px;
+        .feature p {
+            font-size: 13px;
+            color: #64748b;
         }
 
-        .requirements-box {
-            background: white;
-
-            border: 1px solid #e5e7eb;
-
-            border-radius: 16px;
-
-            padding: 30px;
-        }
-
-        .requirements h2 {
-            margin-bottom: 20px;
-        }
-
-        .requirements ul {
-            padding-left: 20px;
-        }
-
-        .requirements li {
-            margin: 10px 0;
-
-            color: #4b5563;
-        }
-
-
-        /* ==============================
+        /* =========================================
            FOOTER
-        ============================== */
+        ========================================= */
 
         footer {
             background: #111827;
-
-            color: #9ca3af;
-
-            text-align: center;
-
-            padding: 35px 20px;
-        }
-
-        footer strong {
             color: white;
+            text-align: center;
+            padding: 30px 20px;
         }
 
+        footer p {
+            color: #cbd5e1;
+            font-size: 14px;
+            margin: 5px;
+        }
 
-        /* ==============================
+        /* =========================================
            RESPONSIVE
-        ============================== */
+        ========================================= */
 
-        @media (max-width: 900px) {
+        @media (max-width: 800px) {
 
-            .platform-grid {
+            .main-options {
                 grid-template-columns: 1fr;
             }
 
-            .features {
-                grid-template-columns:
-                    repeat(2, 1fr);
+            .download-options {
+                grid-template-columns: 1fr;
             }
 
-            .hero h1 {
-                font-size: 42px;
-            }
-        }
-
-
-        @media (max-width: 600px) {
-
-            .navbar {
-                padding: 15px;
-            }
-
-            .logo {
-                font-size: 17px;
-            }
-
-            .nav-link {
-                display: none;
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .hero {
-                padding-top: 55px;
+                padding-top: 45px;
             }
 
-            .hero h1 {
-                font-size: 34px;
+        }
+
+        @media (max-width: 500px) {
+
+            header {
+                padding: 14px 18px;
             }
 
-            .hero p {
+            .brand-text h2 {
                 font-size: 16px;
             }
 
-            .download-box {
-                padding: 25px 18px;
+            .brand-text p {
+                font-size: 10px;
             }
 
-            .features {
+            .brand-logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .hero {
+                padding: 45px 15px 25px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .option-card {
+                padding: 30px 20px;
+            }
+
+            .option-card h2 {
+                font-size: 24px;
+            }
+
+            .feature-grid {
                 grid-template-columns: 1fr;
             }
+
+            .main-button {
+                width: 100%;
+            }
+
         }
 
     </style>
 </head>
 
-
 <body>
 
-
-<!-- ==================================================
+<!-- =========================================================
      HEADER
-================================================== -->
+========================================================= -->
 
 <header>
 
-    <div class="navbar">
+    <div class="brand">
 
-        <div class="logo">
+        <!--
+        CHANGE logo.png TO YOUR REAL LOGO FILE
+        Example:
+        images/logo.png
+        -->
 
-            <div class="logo-icon">
-                SM
-            </div>
+        <img
+            src="logo.png"
+            alt="Student Management System Logo"
+            class="brand-logo"
+        >
 
-            Student Management System
+        <div class="brand-text">
+
+            <h2>Student Management System</h2>
+
+            <p>Developed by Gopi</p>
 
         </div>
-
-        <a
-            class="nav-link"
-            href="https://github.com/Gopi298/StudentApp"
-            target="_blank">
-
-            GitHub
-
-        </a>
 
     </div>
 
 </header>
 
 
-
-<!-- ==================================================
+<!-- =========================================================
      HERO
-================================================== -->
+========================================================= -->
 
 <section class="hero">
 
-    <div class="badge">
-        VERSION 1.0
+    <div class="version">
+        VERSION 2.0
     </div>
 
     <h1>
-        Student Management
-        <span>System</span>
+        Student
+        <span>Management System</span>
     </h1>
 
     <p>
-        A simple and powerful desktop application
-        for managing student information,
-        records and details efficiently.
+        A complete solution for managing students, records,
+        attendance, fees, examinations and school information.
+        Choose Online or Offline application below.
     </p>
 
 </section>
 
 
+<!-- =========================================================
+     TWO MAIN OPTIONS
+========================================================= -->
 
-<!-- ==================================================
-     DOWNLOAD
-================================================== -->
+<section class="main-options">
 
-<section class="download-container">
+
+    <!-- =====================================================
+         ONLINE APPLICATION
+    ====================================================== -->
+
+    <div class="option-card">
+
+        <div class="option-icon">
+            🌐
+        </div>
+
+        <h2>
+            Online Application
+        </h2>
+
+        <p>
+            Use the Student Management System directly
+            from your web browser. No software installation
+            is required.
+        </p>
+
+        <ul class="option-list">
+
+            <li>
+                Online Login
+            </li>
+
+            <li>
+                New User Sign Up
+            </li>
+
+            <li>
+                Student Management
+            </li>
+
+            <li>
+                Access from any device
+            </li>
+
+        </ul>
+
+        <!--
+        =====================================================
+        IMPORTANT:
+        CHANGE THIS URL TO YOUR DEPLOYED FLASK APPLICATION.
+        Example:
+        https://your-school-app.onrender.com
+        =====================================================
+        -->
+
+        <a
+            href="https://YOUR-ONLINE-FLASK-APP-URL.com"
+            class="main-button online-button"
+        >
+            🌐 Open Online Application
+        </a>
+
+    </div>
+
+
+    <!-- =====================================================
+         OFFLINE APPLICATION
+    ====================================================== -->
+
+    <div class="option-card">
+
+        <div class="option-icon">
+            💻
+        </div>
+
+        <h2>
+            Offline Application
+        </h2>
+
+        <p>
+            Download the desktop application and use the
+            Student Management System on your Windows computer.
+        </p>
+
+        <ul class="option-list">
+
+            <li>
+                Windows 64-bit
+            </li>
+
+            <li>
+                Windows 32-bit
+            </li>
+
+            <li>
+                No Python installation required
+            </li>
+
+            <li>
+                Use without browser
+            </li>
+
+        </ul>
+
+        <a
+            href="#download-section"
+            class="main-button offline-button"
+        >
+            💻 Download Application
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     DOWNLOAD APPLICATION
+========================================================= -->
+
+<section id="download-section">
 
     <div class="download-box">
 
-        <div class="download-title">
+        <h2>
+            Download Application
+        </h2>
 
-            <h2>
-                Download the Application
-            </h2>
-
-            <p>
-                Select the version suitable for your operating system.
-            </p>
-
-        </div>
+        <p>
+            Select the Windows version that matches your computer.
+        </p>
 
 
-        <!-- OS DETECTION MESSAGE -->
-
-        <div
-            id="detectedOS"
-            class="detected-os">
-        </div>
+        <div class="download-options">
 
 
-        <!-- PLATFORM CARDS -->
+            <!-- =================================================
+                 WINDOWS 64-BIT
+            ================================================== -->
 
-        <div class="platform-grid">
+            <div class="download-card">
 
-
-            <!-- WINDOWS 64 BIT -->
-
-            <div
-                id="windows64"
-                class="platform">
-
-                <div class="platform-icon">
+                <div class="windows-icon">
                     🪟
                 </div>
 
@@ -587,28 +684,28 @@
                 </h3>
 
                 <p>
-                    For modern 64-bit Windows computers
+                    Recommended for modern Windows 10 and
+                    Windows 11 64-bit computers.
                 </p>
 
                 <a
-                    class="download-button"
-                    href="https://github.com/Gopi298/StudentApp/releases/latest/download/StudentApp.exe">
-
-                    Download EXE
-
+                    href="https://github.com/Gopi298/StudentApp/releases/latest/download/StudentApp.exe"
+                    class="download-link"
+                    download
+                >
+                    ⬇ Download 64-bit
                 </a>
 
             </div>
 
 
+            <!-- =================================================
+                 WINDOWS 32-BIT
+            ================================================== -->
 
-            <!-- WINDOWS 32 BIT -->
+            <div class="download-card">
 
-            <div
-                id="windows32"
-                class="platform">
-
-                <div class="platform-icon">
+                <div class="windows-icon">
                     🪟
                 </div>
 
@@ -617,49 +714,24 @@
                 </h3>
 
                 <p>
-                    For 32-bit Windows computers
+                    Download the 32-bit version for older
+                    Windows computers.
                 </p>
 
+                <!--
+                IMPORTANT:
+                Replace the URL below when you upload
+                your 32-bit EXE to GitHub Releases.
+                -->
+
                 <a
-                    class="download-button disabled"
-                    href="javascript:void(0);">
-
-                    Coming Soon
-
+                    href="https://github.com/Gopi298/StudentApp/releases/latest/download/StudentApp-32bit.exe"
+                    class="download-link"
+                >
+                    ⬇ Download 32-bit
                 </a>
 
             </div>
-
-
-
-            <!-- MACOS -->
-
-            <div
-                id="macos"
-                class="platform">
-
-                <div class="platform-icon">
-                    🍎
-                </div>
-
-                <h3>
-                    macOS
-                </h3>
-
-                <p>
-                    For Apple Mac computers
-                </p>
-
-                <a
-                    class="download-button disabled"
-                    href="javascript:void(0);">
-
-                    Coming Soon
-
-                </a>
-
-            </div>
-
 
         </div>
 
@@ -668,64 +740,32 @@
 </section>
 
 
-
-<!-- ==================================================
+<!-- =========================================================
      FEATURES
-================================================== -->
+========================================================= -->
 
-<section class="features-section">
+<section class="features">
 
-    <div class="features-title">
+    <h2>
+        Application Features
+    </h2>
 
-        <h2>
-            Application Features
-        </h2>
-
-        <p>
-            Everything you need to manage student records.
-        </p>
-
-    </div>
-
-
-    <div class="features">
+    <div class="feature-grid">
 
 
         <div class="feature">
 
             <div class="feature-icon">
-                ➕
+                👨‍🎓
             </div>
 
             <h3>
-                Add Student
+                Student Management
             </h3>
 
-        </div>
-
-
-        <div class="feature">
-
-            <div class="feature-icon">
-                ✏️
-            </div>
-
-            <h3>
-                Update Student
-            </h3>
-
-        </div>
-
-
-        <div class="feature">
-
-            <div class="feature-icon">
-                🗑️
-            </div>
-
-            <h3>
-                Delete Student
-            </h3>
+            <p>
+                Add and manage student information.
+            </p>
 
         </div>
 
@@ -737,8 +777,12 @@
             </div>
 
             <h3>
-                Student Table
+                Student Records
             </h3>
+
+            <p>
+                Maintain complete student records.
+            </p>
 
         </div>
 
@@ -746,191 +790,56 @@
         <div class="feature">
 
             <div class="feature-icon">
-                🧹
+                📷
             </div>
 
             <h3>
-                Clear Details
+                Student Photos
             </h3>
+
+            <p>
+                Store student profile photographs.
+            </p>
 
         </div>
 
 
-    </div>
+        <div class="feature">
 
-</section>
+            <div class="feature-icon">
+                📊
+            </div>
 
+            <h3>
+                Reports
+            </h3>
 
+            <p>
+                Manage school information and reports.
+            </p>
 
-<!-- ==================================================
-     SYSTEM REQUIREMENTS
-================================================== -->
-
-<section class="requirements">
-
-    <div class="requirements-box">
-
-        <h2>
-            System Requirements
-        </h2>
-
-        <ul>
-
-            <li>
-                Windows 10 or Windows 11
-            </li>
-
-            <li>
-                64-bit Windows system
-            </li>
-
-            <li>
-                Minimum 2 GB RAM
-            </li>
-
-            <li>
-                Minimum 100 MB free disk space
-            </li>
-
-            <li>
-                No Python installation required
-            </li>
-
-        </ul>
+        </div>
 
     </div>
 
 </section>
 
 
-
-<!-- ==================================================
+<!-- =========================================================
      FOOTER
-================================================== -->
+========================================================= -->
 
 <footer>
 
     <p>
-        © 2026
-        <strong>
-            Student Management System
-        </strong>
+        © 2026 Student Management System
     </p>
 
-    <p style="margin-top:8px;">
+    <p>
         Developed by Gopi
     </p>
 
 </footer>
-
-
-
-<!-- ==================================================
-     OS DETECTION JAVASCRIPT
-================================================== -->
-
-<script>
-
-    const userAgent =
-        navigator.userAgent ||
-        navigator.vendor ||
-        window.opera;
-
-
-    const detectedOS =
-        document.getElementById("detectedOS");
-
-
-    const windows64 =
-        document.getElementById("windows64");
-
-
-    const windows32 =
-        document.getElementById("windows32");
-
-
-    const macos =
-        document.getElementById("macos");
-
-
-
-    /*
-    ============================================
-    WINDOWS DETECTION
-    ============================================
-    */
-
-    if (
-        userAgent.indexOf("Windows NT") !== -1
-    ) {
-
-        detectedOS.style.display = "block";
-
-        detectedOS.innerHTML =
-            "✓ Windows detected — Windows download is recommended.";
-
-        windows64.classList.add("recommended");
-
-    }
-
-
-
-    /*
-    ============================================
-    MACOS DETECTION
-    ============================================
-    */
-
-    else if (
-        userAgent.indexOf("Mac OS X") !== -1
-    ) {
-
-        detectedOS.style.display = "block";
-
-        detectedOS.innerHTML =
-            "✓ macOS detected — macOS download is recommended.";
-
-        macos.classList.add("recommended");
-
-    }
-
-
-
-    /*
-    ============================================
-    LINUX DETECTION
-    ============================================
-    */
-
-    else if (
-        userAgent.indexOf("Linux") !== -1
-    ) {
-
-        detectedOS.style.display = "block";
-
-        detectedOS.innerHTML =
-            "Linux detected — currently this application is available for Windows only.";
-
-    }
-
-
-
-    /*
-    ============================================
-    OTHER DEVICES
-    ============================================
-    */
-
-    else {
-
-        detectedOS.style.display = "block";
-
-        detectedOS.innerHTML =
-            "Please select the appropriate download for your computer.";
-
-    }
-
-</script>
 
 
 </body>
